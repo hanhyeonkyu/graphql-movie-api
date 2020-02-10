@@ -13,14 +13,21 @@
     "babel-preset-env": "^1.7.0",
     "babel-preset-stage-3": "^6.24.1",
     "graphql-yoga": "^1.14.8",
-    "nodemon": "^2.0.2"
+    "nodemon": "^2.0.2",
+    "now": "^17.0.3"
   },
   "scripts": {
-    "start": "babel-node dist/index.js",
+    "dev": "nodemon --exec babel-node src/index.js",
+    "deploy": "gh-pages -d dist",
+    "prebuild": "rm -rf dist",
     "build": "babel src --out-dir dist",
-    "dev": "nodemon --exec babel-node src/index.js"
+    "postbuild": "cd src/graphql && copy ./schema.graphql ../../dist/graphql",
+    "start": "cd dust && node ."
   },
   "now": {
     "alias": "graphql-movie-api"
+  },
+  "devDependencies": {
+    "copy": "^0.3.2"
   }
 }
