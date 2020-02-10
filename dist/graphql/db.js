@@ -44,7 +44,7 @@ var getMovies = exports.getMovies = function () {
             return _context.stop();
         }
       }
-    }, _callee);
+    }, _callee, undefined);
   }));
 
   return function getMovies(_x, _x2) {
@@ -77,7 +77,7 @@ var getMovie = exports.getMovie = function () {
             return _context2.stop();
         }
       }
-    }, _callee2);
+    }, _callee2, undefined);
   }));
 
   return function getMovie(_x3) {
@@ -110,7 +110,7 @@ var getSuggestions = exports.getSuggestions = function () {
             return _context3.stop();
         }
       }
-    }, _callee3);
+    }, _callee3, undefined);
   }));
 
   return function getSuggestions(_x4) {
