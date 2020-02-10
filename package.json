@@ -17,6 +17,7 @@
   },
   "scripts": {
     "start": "babel-node src/index.js",
+    "build": "babel src --out-dir dist",
     "dev": "nodemon --exec babel-node src/index.js"
   },
   "now": {
