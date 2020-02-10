@@ -6,7 +6,7 @@
       {
         "asyncGenerators": true,
         "generators": true,
-        "async": true
+        "async": false
       }
     ]
   ]
