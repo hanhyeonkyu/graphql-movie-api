@@ -2,12 +2,7 @@
   "presets": ["env", "stage-3"],
   "plugins": [
     [
-      "@babel/plugin-transform-regenerator",
-      {
-        "asyncGenerators": true,
-        "generators": true,
-        "async": false
-      }
+      "@babel/plugin-transform-regenerator"
     ]
   ]
 }
