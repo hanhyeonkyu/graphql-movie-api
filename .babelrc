@@ -1,8 +1,6 @@
 {
   "presets": ["env", "stage-3"],
   "plugins": [
-    [
-      "@babel/plugin-transform-regenerator"
-    ]
+    ["@babel/plugin-transform-regenerator", "@babel/plugin-transform-runtime"]
   ]
 }
