@@ -6,6 +6,14 @@
   "repository": "https://github.com/hanhyeonkyu/graphql-movie-api",
   "author": "AlexHan<busgod1212@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "dev": "nodemon --exec babel-node src/index.js",
+    "deploy": "gh-pages -d dist",
+    "prebuild": "rm -rf dist",
+    "build": "babel src --out-dir dist",
+    "postbuild": "cd src/graphql && copy ./schema.graphql ../../dist/graphql",
+    "start": "babel-node dist/index.js"
+  },
   "dependencies": {
     "@babel/plugin-transform-regenerator": "^7.8.3",
     "axios": "^0.18.0",
@@ -16,14 +24,6 @@
     "graphql-yoga": "^1.14.8",
     "nodemon": "^2.0.2",
     "now": "^17.0.3"
-  },
-  "scripts": {
-    "dev": "nodemon --exec babel-node src/index.js",
-    "deploy": "gh-pages -d dist",
-    "prebuild": "rm -rf dist",
-    "build": "babel src --out-dir dist",
-    "postbuild": "cd src/graphql && copy ./schema.graphql ../../dist/graphql",
-    "start": "babel-node dist/index.js"
   },
   "now": {
     "alias": "graphql-movie-api"
