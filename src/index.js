@@ -26,8 +26,7 @@ const options = {
     preflightContinue: false,
     optionsSuccessStatus: 204
   },
-  credentials: true,
-  tracing: "enabled"
+  credentials: true
 };
 
 const server = new GraphQLServer({
