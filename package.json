@@ -22,7 +22,7 @@
     "prebuild": "rm -rf dist",
     "build": "babel src --out-dir dist",
     "postbuild": "cd src/graphql && copy ./schema.graphql ../../dist/graphql",
-    "start": "babel-node dist/index.js"
+    "start": "cd dist && node ."
   },
   "now": {
     "alias": "graphql-movie-api"
