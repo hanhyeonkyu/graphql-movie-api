@@ -1,9 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
-const { graphqlExpress, graphiqlExpress } = require("apollo-server-express");
-const { makeExecutableSchema } = require("graphql-tools");
-// import { GraphQLServer } from "graphql-yoga";
+const { ApolloServer } = require("apollo-server-express");
 import resolvers from "./graphql/resolvers";
 
 const typeDefs = `
@@ -23,19 +21,22 @@ type Query {
   suggestions(id: Int!): [Movie]!
 }
 `;
-const myGraphQLSchema = makeExecutableSchema({ typeDefs, resolvers });
-const PORT = 4000;
+
+const schema = new ApolloServer({
+  typeDefs,
+  resolvers,
+  playground: {
+    endpoint: "/graphql",
+    settings: {
+      "editor.theme": "dark"
+    }
+  }
+});
+
 const app = express();
-app.use(cors());
-app.use(
-  "/graphql",
-  bodyParser.json(),
-  graphqlExpress({ schema: myGraphQLSchema })
-);
-app.get("./graphql", graphiqlExpress({ endpointURL: "/graphql" }));
 
-console.log(`Server listening on http://localhost:${PORT} ...`);
+schema.applyMiddleware({
+  app
+});
 
-app.listen(PORT);
-
-// server.start(() => console.log("Graphql Server Running"));
+app.listen(4000);
