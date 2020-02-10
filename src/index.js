@@ -26,7 +26,8 @@ const options = {
     preflightContinue: false,
     optionsSuccessStatus: 204
   },
-  credentials: true
+  credentials: true,
+  port: ""
 };
 
 const server = new GraphQLServer({
