@@ -29,6 +29,4 @@ var handleAppStart = function handleAppStart() {
   return console.log("Graphql Server Running");
 };
 
-server.start(options, handleAppStart).catch(function (err) {
-  return console.log(err.message);
-});
+server.start(options, handleAppStart);

@@ -36,4 +36,4 @@ const server = new GraphQLServer({
 
 const handleAppStart = () => console.log("Graphql Server Running");
 
-server.start(options, handleAppStart).catch(err => console.log(err.message));
+server.start(options, handleAppStart);
