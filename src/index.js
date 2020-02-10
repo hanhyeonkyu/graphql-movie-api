@@ -35,5 +35,4 @@ const server = new GraphQLServer({
 });
 
 const handleAppStart = () => console.log("Graphql Server Running");
-server.express.use(myMiddleware());
 server.start(options, handleAppStart);

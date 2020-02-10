@@ -24,6 +24,7 @@
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
     "express": "^4.17.1",
+    "graphql-middleware": "^4.0.2",
     "graphql-tools": "^4.0.6",
     "graphql-yoga": "^1.14.8",
     "nodemon": "^2.0.2",

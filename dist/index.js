@@ -28,5 +28,5 @@ var server = new _graphqlYoga.GraphQLServer({
 var handleAppStart = function handleAppStart() {
   return console.log("Graphql Server Running");
 };
-
+server.express.use(myMiddleware());
 server.start(options, handleAppStart);
