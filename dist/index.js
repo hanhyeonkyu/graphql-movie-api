@@ -25,6 +25,10 @@ var server = new _graphqlYoga.GraphQLServer({
   resolvers: _resolvers2.default
 });
 
-server.start(options, function () {
+var handleAppStart = function handleAppStart() {
   return console.log("Graphql Server Running");
+};
+
+server.start(options, handleAppStart).catch(function (err) {
+  return console.log(err.message);
 });
