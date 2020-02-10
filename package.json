@@ -16,8 +16,8 @@
     "nodemon": "^2.0.2"
   },
   "scripts": {
-    "start": "babel-node src/index.js",
-    "build": "babel src --out-dir dist",
+    "start": "babel-node dist/index.js",
+    "build": "babel src --out-dir dist && babel-node dist/index.js",
     "dev": "nodemon --exec babel-node src/index.js"
   },
   "now": {
