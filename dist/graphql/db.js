@@ -37,7 +37,10 @@ var getMovies = exports.getMovies = function () {
                 limit: limit,
                 minimum_rating: rating
               },
-              headers: { "Access-Control-Allow-Origin": "*" }
+              headers: {
+                "Access-Control-Allow-Origin": "*",
+                "Content-Type": "application/json"
+              }
             });
 
           case 2:
@@ -84,7 +87,7 @@ var getMovie = exports.getMovie = function () {
               if (err.response) {
                 // The request was made and the server responded with a status code
                 // that falls out of the range of 2xx
-                console.log(err.response.data);
+                // console.log(err.response.data);
                 console.log(err.response.status);
                 console.log(err.response.headers);
               } else if (err.request) {
