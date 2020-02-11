@@ -13,22 +13,17 @@ var _asyncToGenerator2 = require("babel-runtime/helpers/asyncToGenerator");
 
 var _asyncToGenerator3 = _interopRequireDefault(_asyncToGenerator2);
 
-// export const getMovies = async (limit, rating) => {
-//   const data = await axios(LIST_MOVIES_URL, {
-//     params: {
-//       limit,
-//       minimum_rating: rating
-//     },
-//     headers: { "Access-Control-Allow-Origin": "*" }
-//   });
-//   const movies = data.data.data.movies;
+var _axios = require("axios");
 
-//   if (movies) {
-//     return movies;
-//   } else {
-//     return null;
-//   }
-// };
+var _axios2 = _interopRequireDefault(_axios);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var BASE_URL = "https://yts-proxy.now.sh/";
+var LIST_MOVIES_URL = BASE_URL + "list_movies.json";
+var MOVIE_DETAILS_URL = BASE_URL + "movie_details.json";
+var MOVIE_SUGGESTIONS_URL = BASE_URL + "movie_suggestions.json";
+
 var getMovies = exports.getMovies = function () {
   var _ref = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee(limit, rating) {
     var data, movies;
@@ -64,7 +59,7 @@ var getMovies = exports.getMovies = function () {
             return _context.stop();
         }
       }
-    }, _callee, this);
+    }, _callee, undefined);
   }));
 
   return function getMovies(_x, _x2) {
@@ -72,16 +67,7 @@ var getMovies = exports.getMovies = function () {
   };
 }();
 
-var _axios = require("axios");
-
-var _axios2 = _interopRequireDefault(_axios);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var BASE_URL = "https://yts-proxy.now.sh/";
-var LIST_MOVIES_URL = BASE_URL + "list_movies.json";
-var MOVIE_DETAILS_URL = BASE_URL + "movie_details.json";
-var MOVIE_SUGGESTIONS_URL = BASE_URL + "movie_suggestions.json";var getMovie = exports.getMovie = function () {
+var getMovie = exports.getMovie = function () {
   var _ref2 = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee2(id) {
     var _ref3, movie;
 
