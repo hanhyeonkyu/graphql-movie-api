@@ -5,13 +5,12 @@ const MOVIE_DETAILS_URL = `${BASE_URL}movie_details.json`;
 const MOVIE_SUGGESTIONS_URL = `${BASE_URL}movie_suggestions.json`;
 
 export const getMovies = async (limit, rating) => {
-  const data = await axios({
-    url: LIST_MOVIES_URL,
+  const data = await axios(LIST_MOVIES_URL, {
     params: {
       limit,
       minimum_rating: rating
     },
-    baseUrl: "https://graphql-movieapi.herokuapp.com/"
+    headers: { "Access-Control-Allow-Origin": "*" }
   });
   console.log("------------------------------------");
   const movies = data.data.data.movies;
