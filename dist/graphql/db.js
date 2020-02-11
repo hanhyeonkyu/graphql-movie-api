@@ -32,13 +32,12 @@ var getMovies = exports.getMovies = function () {
         switch (_context.prev = _context.next) {
           case 0:
             _context.next = 2;
-            return (0, _axios2.default)({
-              url: LIST_MOVIES_URL,
+            return (0, _axios2.default)(LIST_MOVIES_URL, {
               params: {
                 limit: limit,
                 minimum_rating: rating
               },
-              baseUrl: "https://graphql-movieapi.herokuapp.com/"
+              headers: { "Access-Control-Allow-Origin": "*" }
             });
 
           case 2:
