@@ -13,9 +13,9 @@ type Movie {
 }
 
 type Query {
-  movies(limit: Int, rating: Float): [Movie]!
+  movies(limit: Int, rating: Float): [Movie]
   movie(id: Int!): Movie
-  suggestions(id: Int!): [Movie]!
+  suggestions(id: Int!): [Movie]
 }
 `;
 
@@ -36,4 +36,5 @@ const server = new GraphQLServer({
 });
 
 const handleAppStart = () => console.log("Graphql Server Running");
+
 server.start(options, handleAppStart);

@@ -96,9 +96,18 @@ var getMovie = exports.getMovie = function () {
           case 2:
             _ref4 = _context2.sent;
             movie = _ref4.data.data.movie;
+
+            if (!movie) {
+              _context2.next = 8;
+              break;
+            }
+
             return _context2.abrupt("return", movie);
 
-          case 5:
+          case 8:
+            return _context2.abrupt("return", null);
+
+          case 9:
           case "end":
             return _context2.stop();
         }
@@ -129,9 +138,18 @@ var getSuggestions = exports.getSuggestions = function () {
           case 2:
             _ref6 = _context3.sent;
             movies = _ref6.data.data.movies;
+
+            if (!movies) {
+              _context3.next = 8;
+              break;
+            }
+
             return _context3.abrupt("return", movies);
 
-          case 5:
+          case 8:
+            return _context3.abrupt("return", null);
+
+          case 9:
           case "end":
             return _context3.stop();
         }
