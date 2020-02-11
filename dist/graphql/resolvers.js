@@ -18,14 +18,10 @@ var resolvers = {
       (0, _objectDestructuringEmpty3.default)(_ref);
       return "********************************************";
     },
-    // movies: (_, { limit, rating }) => getMovies(limit, rating),
     movies: function movies(_, _ref2) {
       var limit = _ref2.limit,
           rating = _ref2.rating;
-
-      return (0, _db.getMovies)(limit, rating).then(function (res) {
-        return res;
-      });
+      return (0, _db.getMovies)(limit, rating);
     },
     movie: function movie(_, _ref3) {
       var id = _ref3.id;

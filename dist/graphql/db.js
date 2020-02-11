@@ -13,17 +13,22 @@ var _asyncToGenerator2 = require("babel-runtime/helpers/asyncToGenerator");
 
 var _asyncToGenerator3 = _interopRequireDefault(_asyncToGenerator2);
 
-var _axios = require("axios");
+// export const getMovies = async (limit, rating) => {
+//   const data = await axios(LIST_MOVIES_URL, {
+//     params: {
+//       limit,
+//       minimum_rating: rating
+//     },
+//     headers: { "Access-Control-Allow-Origin": "*" }
+//   });
+//   const movies = data.data.data.movies;
 
-var _axios2 = _interopRequireDefault(_axios);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var BASE_URL = "https://yts-proxy.now.sh/";
-var LIST_MOVIES_URL = BASE_URL + "list_movies.json";
-var MOVIE_DETAILS_URL = BASE_URL + "movie_details.json";
-var MOVIE_SUGGESTIONS_URL = BASE_URL + "movie_suggestions.json";
-
+//   if (movies) {
+//     return movies;
+//   } else {
+//     return null;
+//   }
+// };
 var getMovies = exports.getMovies = function () {
   var _ref = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee(limit, rating) {
     var data, movies;
@@ -42,26 +47,24 @@ var getMovies = exports.getMovies = function () {
 
           case 2:
             data = _context.sent;
-
-            console.log("------------------------------------");
             movies = data.data.data.movies;
 
             if (!movies) {
-              _context.next = 9;
+              _context.next = 8;
               break;
             }
 
             return _context.abrupt("return", movies);
 
-          case 9:
+          case 8:
             return _context.abrupt("return", null);
 
-          case 10:
+          case 9:
           case "end":
             return _context.stop();
         }
       }
-    }, _callee, undefined);
+    }, _callee, this);
   }));
 
   return function getMovies(_x, _x2) {
@@ -69,7 +72,16 @@ var getMovies = exports.getMovies = function () {
   };
 }();
 
-var getMovie = exports.getMovie = function () {
+var _axios = require("axios");
+
+var _axios2 = _interopRequireDefault(_axios);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var BASE_URL = "https://yts-proxy.now.sh/";
+var LIST_MOVIES_URL = BASE_URL + "list_movies.json";
+var MOVIE_DETAILS_URL = BASE_URL + "movie_details.json";
+var MOVIE_SUGGESTIONS_URL = BASE_URL + "movie_suggestions.json";var getMovie = exports.getMovie = function () {
   var _ref2 = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee2(id) {
     var _ref3, movie;
 
