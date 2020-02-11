@@ -34,7 +34,7 @@ var getMovies = exports.getMovies = function () {
           case 0:
             _context.prev = 0;
             _context.next = 3;
-            return _axios2.default.get(LIST_MOVIES_URL, {
+            return (0, _axios2.default)(LIST_MOVIES_URL, {
               params: {
                 limit: limit,
                 minimum_rating: rating
@@ -74,7 +74,7 @@ var getMovie = exports.getMovie = function () {
         switch (_context2.prev = _context2.next) {
           case 0:
             _context2.next = 2;
-            return _axios2.default.get(MOVIE_DETAILS_URL, {
+            return (0, _axios2.default)(MOVIE_DETAILS_URL, {
               params: {
                 movie_id: id
               }
@@ -107,7 +107,7 @@ var getSuggestions = exports.getSuggestions = function () {
         switch (_context3.prev = _context3.next) {
           case 0:
             _context3.next = 2;
-            return _axios2.default.get(MOVIE_SUGGESTIONS_URL, {
+            return (0, _axios2.default)(MOVIE_SUGGESTIONS_URL, {
               params: {
                 movie_id: id
               }
