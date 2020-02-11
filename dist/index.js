@@ -13,11 +13,10 @@ var typeDefs = "\ntype Movie {\n  id: Int!\n  title: String!\n  rating: Float\n 
 var options = {
   cors: {
     origin: "*",
-    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-    preflightContinue: false,
-    optionsSuccessStatus: 204
+    methods: "GET,HEAD,PUT,PATCH,POST,DELETE"
   },
-  credentials: true
+  credentials: true,
+  timeout: 300000
 };
 
 var server = new _graphqlYoga.GraphQLServer({
