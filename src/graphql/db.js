@@ -21,20 +21,19 @@ const MOVIE_SUGGESTIONS_URL = `${BASE_URL}movie_suggestions.json`;
 //   }
 // };
 export async function getMovies(limit, rating) {
-  const data = await axios(LIST_MOVIES_URL, {
+  await axios(LIST_MOVIES_URL, {
     params: {
       limit,
       minimum_rating: rating
     },
     headers: { "Access-Control-Allow-Origin": "*" }
+  }).then(res => {
+    if (res) {
+      return res.data.data.movies;
+    } else {
+      return null;
+    }
   });
-  const movies = data.data.data.movies;
-
-  if (movies) {
-    return movies;
-  } else {
-    return null;
-  }
 }
 
 export const getMovie = async id => {
