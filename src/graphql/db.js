@@ -12,7 +12,8 @@ export const getMovies = async (limit, rating) => {
         minimum_rating: rating
       }
     });
-    const movies = data.data.movies;
+
+    const movies = data.data.data.movies;
 
     if (movies) {
       return movies;
