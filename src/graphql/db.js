@@ -4,7 +4,23 @@ const LIST_MOVIES_URL = `${BASE_URL}list_movies.json`;
 const MOVIE_DETAILS_URL = `${BASE_URL}movie_details.json`;
 const MOVIE_SUGGESTIONS_URL = `${BASE_URL}movie_suggestions.json`;
 
-export const getMovies = async (limit, rating) => {
+// export const getMovies = async (limit, rating) => {
+//   const data = await axios(LIST_MOVIES_URL, {
+//     params: {
+//       limit,
+//       minimum_rating: rating
+//     },
+//     headers: { "Access-Control-Allow-Origin": "*" }
+//   });
+//   const movies = data.data.data.movies;
+
+//   if (movies) {
+//     return movies;
+//   } else {
+//     return null;
+//   }
+// };
+export async function getMovies(limit, rating) {
   const data = await axios(LIST_MOVIES_URL, {
     params: {
       limit,
@@ -12,7 +28,6 @@ export const getMovies = async (limit, rating) => {
     },
     headers: { "Access-Control-Allow-Origin": "*" }
   });
-  console.log("------------------------------------");
   const movies = data.data.data.movies;
 
   if (movies) {
@@ -20,7 +35,7 @@ export const getMovies = async (limit, rating) => {
   } else {
     return null;
   }
-};
+}
 
 export const getMovie = async id => {
   const {
