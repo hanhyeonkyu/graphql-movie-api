@@ -2,7 +2,7 @@ import { getMovies, getMovie, getSuggestions } from "./db";
 
 const resolvers = {
   Query: {
-    movies: async (_, { limit, rating }) => await getMovies(limit, rating),
+    movies: (_, { limit, rating }) => getMovies(limit, rating),
     movie: (_, { id }) => getMovie(Number(id)),
     suggestions: (_, { id }) => getSuggestions(Number(id))
   }
