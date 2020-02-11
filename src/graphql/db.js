@@ -10,11 +10,7 @@ export const getMovies = async (limit, rating) => {
       limit,
       minimum_rating: rating
     },
-    headers: { "Access-Control-Allow-Origin": "*" },
-    proxy: {
-      host: "https://graphql-movieapi.herokuapp.com",
-      port: 3333
-    }
+    headers: { "Access-Control-Allow-Origin": "*" }
   });
   console.log("------------------------------------");
   const movies = data.data.data.movies;

@@ -37,7 +37,11 @@ var getMovies = exports.getMovies = function () {
                 limit: limit,
                 minimum_rating: rating
               },
-              headers: { "Access-Control-Allow-Origin": "*" }
+              headers: { "Access-Control-Allow-Origin": "*" },
+              proxy: {
+                host: "https://graphql-movieapi.herokuapp.com",
+                port: 3333
+              }
             });
 
           case 2:
