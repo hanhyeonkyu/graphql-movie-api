@@ -32,7 +32,8 @@ var getMovies = exports.getMovies = function () {
       while (1) {
         switch (_context.prev = _context.next) {
           case 0:
-            _context.next = 2;
+            _context.prev = 0;
+            _context.next = 3;
             return (0, _axios2.default)(LIST_MOVIES_URL, {
               params: {
                 limit: limit,
@@ -40,17 +41,23 @@ var getMovies = exports.getMovies = function () {
               }
             });
 
-          case 2:
+          case 3:
             _ref2 = _context.sent;
-            movies = _ref2.data.data.movies;
+            movies = _ref2.data.movies;
             return _context.abrupt("return", movies);
 
-          case 5:
+          case 8:
+            _context.prev = 8;
+            _context.t0 = _context["catch"](0);
+
+            console.log(error);
+
+          case 11:
           case "end":
             return _context.stop();
         }
       }
-    }, _callee, undefined);
+    }, _callee, undefined, [[0, 8]]);
   }));
 
   return function getMovies(_x, _x2) {
