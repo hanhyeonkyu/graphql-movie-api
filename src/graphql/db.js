@@ -7,8 +7,10 @@ const MOVIE_SUGGESTIONS_URL = `${BASE_URL}movie_suggestions.json`;
 export const getMovies = async (limit, rating) => {
   try {
     const {
-      data: { movies }
-    } = await fetch(LIST_MOVIES_URL, {
+      data: {
+        data: { movies }
+      }
+    } = await axios(LIST_MOVIES_URL, {
       params: {
         limit,
         minimum_rating: rating

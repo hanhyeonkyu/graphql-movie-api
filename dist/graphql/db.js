@@ -43,7 +43,7 @@ var getMovies = exports.getMovies = function () {
 
           case 3:
             _ref2 = _context.sent;
-            movies = _ref2.data.movies;
+            movies = _ref2.data.data.movies;
             return _context.abrupt("return", movies);
 
           case 8:
