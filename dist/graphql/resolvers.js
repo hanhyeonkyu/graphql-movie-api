@@ -20,8 +20,8 @@ var resolvers = {
   Query: {
     movies: function () {
       var _ref = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee(_, _ref2) {
-        var rating = _ref2.rating,
-            limit = _ref2.limit;
+        var limit = _ref2.limit,
+            rating = _ref2.rating;
         return _regenerator2.default.wrap(function _callee$(_context) {
           while (1) {
             switch (_context.prev = _context.next) {

@@ -31,7 +31,7 @@ var getMovies = exports.getMovies = function () {
       while (1) {
         switch (_context.prev = _context.next) {
           case 0:
-            _context.prev = 0;
+            console.log("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
             _context.next = 3;
             return (0, _axios2.default)(LIST_MOVIES_URL, {
               params: {
@@ -42,34 +42,26 @@ var getMovies = exports.getMovies = function () {
 
           case 3:
             data = _context.sent;
+
+            console.log("------------------------------------");
             movies = data.data.data.movies;
 
             if (!movies) {
-              _context.next = 9;
+              _context.next = 10;
               break;
             }
 
             return _context.abrupt("return", movies);
 
-          case 9:
+          case 10:
             return _context.abrupt("return", null);
 
-          case 10:
-            _context.next = 15;
-            break;
-
-          case 12:
-            _context.prev = 12;
-            _context.t0 = _context["catch"](0);
-
-            console.log(_context.t0);
-
-          case 15:
+          case 11:
           case "end":
             return _context.stop();
         }
       }
-    }, _callee, undefined, [[0, 12]]);
+    }, _callee, undefined);
   }));
 
   return function getMovies(_x, _x2) {

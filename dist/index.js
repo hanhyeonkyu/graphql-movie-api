@@ -17,8 +17,7 @@ var options = {
     preflightContinue: false,
     optionsSuccessStatus: 204
   },
-  credentials: true,
-  debug: true
+  credentials: true
 };
 
 var server = new _graphqlYoga.GraphQLServer({
