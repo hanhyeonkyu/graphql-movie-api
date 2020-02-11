@@ -11,7 +11,7 @@ export const getMovies = async (limit, rating) => {
       limit,
       minimum_rating: rating
     },
-    baseUrl = 'https://graphql-movieapi.herokuapp.com/'
+    baseUrl: "https://graphql-movieapi.herokuapp.com/"
   });
   console.log("------------------------------------");
   const movies = data.data.data.movies;
