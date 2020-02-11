@@ -10,7 +10,8 @@ export const getMovies = async (limit, rating) => {
     params: {
       limit,
       minimum_rating: rating
-    }
+    },
+    baseUrl = process.env.baseURL || "http://localhost:3001"
   });
   console.log("------------------------------------");
   const movies = data.data.data.movies;
