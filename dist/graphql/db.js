@@ -19,7 +19,6 @@ var _axios2 = _interopRequireDefault(_axios);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-_axios2.default.defaults.timeout = 10000;
 var BASE_URL = "https://yts-proxy.now.sh/";
 var LIST_MOVIES_URL = BASE_URL + "list_movies.json";
 var MOVIE_DETAILS_URL = BASE_URL + "movie_details.json";
@@ -39,7 +38,11 @@ var getMovies = exports.getMovies = function () {
               params: {
                 limit: limit,
                 minimum_rating: rating
-              }
+              },
+              timeout: 0,
+              withCredentials: true,
+              maxContentLength: 1000000,
+              headers: { "X-Requested-With": "XMLHttpRequest" }
             });
 
           case 3:

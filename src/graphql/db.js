@@ -1,5 +1,4 @@
 import axios from "axios";
-axios.defaults.timeout = 10000;
 const BASE_URL = "https://yts-proxy.now.sh/";
 const LIST_MOVIES_URL = `${BASE_URL}list_movies.json`;
 const MOVIE_DETAILS_URL = `${BASE_URL}movie_details.json`;
@@ -15,7 +14,11 @@ export const getMovies = async (limit, rating) => {
       params: {
         limit,
         minimum_rating: rating
-      }
+      },
+      timeout: 0,
+      withCredentials: true,
+      maxContentLength: 1000000,
+      headers: { "X-Requested-With": "XMLHttpRequest" }
     });
     return movies;
   } catch (err) {
