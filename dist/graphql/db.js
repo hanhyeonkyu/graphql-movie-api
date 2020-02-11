@@ -38,13 +38,6 @@ var getMovies = exports.getMovies = function () {
               params: {
                 limit: limit,
                 minimum_rating: rating
-              },
-              timeout: 0,
-              withCredentials: true,
-              maxContentLength: 1000000,
-              headers: {
-                "X-Requested-With": "XMLHttpRequest",
-                "X-Frame-Options": "allow-from-uri"
               }
             });
 
