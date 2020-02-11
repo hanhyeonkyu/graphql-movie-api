@@ -11,7 +11,7 @@ export const getMovies = async (limit, rating) => {
       limit,
       minimum_rating: rating
     },
-    baseUrl = process.env.baseURL || "http://localhost:3001"
+    baseUrl = 'http://your-app-name.herokuapp.com'
   });
   console.log("------------------------------------");
   const movies = data.data.data.movies;
