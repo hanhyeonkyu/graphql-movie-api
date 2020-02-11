@@ -18,7 +18,7 @@ export const getMovies = async (limit, rating) => {
     });
     return movies;
   } catch (err) {
-    console.log(error);
+    console.log(err.message);
   }
 };
 
