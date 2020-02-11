@@ -11,9 +11,10 @@
     "prebuild": "rm -rf dist",
     "build": "babel src --out-dir dist",
     "postbuild": "cd src/graphql && copy ./schema.graphql ../../dist/graphql",
-    "start": "babel-node src/index.js"
+    "start": "node --inspect dist/index.js"
   },
   "dependencies": {
+    "@babel/plugin-transform-arrow-functions": "^7.8.3",
     "@babel/runtime": "^7.8.4",
     "axios": "^0.18.0",
     "babel-cli": "^6.26.0",

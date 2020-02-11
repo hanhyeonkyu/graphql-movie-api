@@ -3,10 +3,15 @@
   "plugins": [
     [
       "transform-runtime",
-      { "regenerator": true },
+      {
+        "regenerator": true
+      },
       "@babel/plugin-transform-runtime",
-      { "regenerator": true },
-      "@babel/plugin-transform-async-to-generator"
+      {
+        "regenerator": true
+      },
+      "@babel/plugin-transform-async-to-generator",
+      "@babel/plugin-transform-arrow-functions"
     ]
   ]
 }
