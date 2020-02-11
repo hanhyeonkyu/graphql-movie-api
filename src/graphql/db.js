@@ -18,7 +18,10 @@ export const getMovies = async (limit, rating) => {
       timeout: 0,
       withCredentials: true,
       maxContentLength: 1000000,
-      headers: { "X-Requested-With": "XMLHttpRequest" }
+      headers: {
+        "X-Requested-With": "XMLHttpRequest",
+        "X-Frame-Options": "allow-from-uri"
+      }
     });
     return movies;
   } catch (err) {
