@@ -10,7 +10,10 @@ export const getMovies = async (limit, rating) => {
       limit,
       minimum_rating: rating
     },
-    headers: { "Access-Control-Allow-Origin": "*" }
+    headers: {
+      "Access-Control-Allow-Origin": "*",
+      "Content-Type": "application/json"
+    }
   });
   const movies = data.data.data.movies;
 
