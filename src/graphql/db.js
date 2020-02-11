@@ -36,7 +36,11 @@ export const getMovie = async id => {
       movie_id: id
     }
   });
-  return movie;
+  if (movie) {
+    return movie;
+  } else {
+    return null;
+  }
 };
 
 export const getSuggestions = async id => {
@@ -49,5 +53,9 @@ export const getSuggestions = async id => {
       movie_id: id
     }
   });
-  return movies;
+  if (movies) {
+    return movies;
+  } else {
+    return null;
+  }
 };

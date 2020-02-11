@@ -44,20 +44,33 @@ var getMovies = exports.getMovies = function () {
           case 3:
             _ref2 = _context.sent;
             movies = _ref2.data.data.movies;
+
+            if (!movies) {
+              _context.next = 9;
+              break;
+            }
+
             return _context.abrupt("return", movies);
 
-          case 8:
-            _context.prev = 8;
+          case 9:
+            return _context.abrupt("return", null);
+
+          case 10:
+            _context.next = 15;
+            break;
+
+          case 12:
+            _context.prev = 12;
             _context.t0 = _context["catch"](0);
 
             console.log(_context.t0);
 
-          case 11:
+          case 15:
           case "end":
             return _context.stop();
         }
       }
-    }, _callee, undefined, [[0, 8]]);
+    }, _callee, undefined, [[0, 12]]);
   }));
 
   return function getMovies(_x, _x2) {
