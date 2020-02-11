@@ -6,18 +6,14 @@ const MOVIE_SUGGESTIONS_URL = `${BASE_URL}movie_suggestions.json`;
 
 export const getMovies = async (limit, rating) => {
   try {
-    const {
-      data: {
-        data: { movies }
-      }
-    } = await axios(LIST_MOVIES_URL, {
+    const data = await axios(LIST_MOVIES_URL, {
       params: {
         limit,
         minimum_rating: rating
       }
-    })
-      .then(res => console.log(res))
-      .catch(err => console.log(err.message));
+    });
+    const movies = data.data.movies;
+
     if (movies) {
       return movies;
     } else {
