@@ -16,8 +16,8 @@ export const getMovies = async (limit, rating) => {
         minimum_rating: rating
       }
     })
-      .then(res => alert(res))
-      .catch(err => alert(err.message));
+      .then(res => console.log(res))
+      .catch(err => console.log(err.message));
     if (movies) {
       return movies;
     } else {

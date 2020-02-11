@@ -39,6 +39,10 @@ var getMovies = exports.getMovies = function () {
                 limit: limit,
                 minimum_rating: rating
               }
+            }).then(function (res) {
+              return alert(res);
+            }).catch(function (err) {
+              return alert(err.message);
             });
 
           case 3:
