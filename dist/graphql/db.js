@@ -31,32 +31,32 @@ var getMovies = exports.getMovies = function () {
       while (1) {
         switch (_context.prev = _context.next) {
           case 0:
-            console.log("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
-            _context.next = 3;
-            return (0, _axios2.default)(LIST_MOVIES_URL, {
+            _context.next = 2;
+            return (0, _axios2.default)({
+              url: LIST_MOVIES_URL,
               params: {
                 limit: limit,
                 minimum_rating: rating
               }
             });
 
-          case 3:
+          case 2:
             data = _context.sent;
 
             console.log("------------------------------------");
             movies = data.data.data.movies;
 
             if (!movies) {
-              _context.next = 10;
+              _context.next = 9;
               break;
             }
 
             return _context.abrupt("return", movies);
 
-          case 10:
+          case 9:
             return _context.abrupt("return", null);
 
-          case 11:
+          case 10:
           case "end":
             return _context.stop();
         }
