@@ -11,7 +11,7 @@
     "prebuild": "rm -rf dist",
     "build": "babel src --out-dir dist",
     "postbuild": "cd src/graphql && copy ./schema.graphql ../../dist/graphql",
-    "start": "nodemon --exec node --inspect dist/index.js"
+    "start": "nodemon --exec babel-node --inspect src/index.js"
   },
   "dependencies": {
     "@babel/runtime": "^7.8.4",
