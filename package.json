@@ -7,7 +7,7 @@
   "author": "AlexHan<busgod1212@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "dev": "nodemon src/index.js ext js,graphql --exec babel-node",
+    "dev": "nodemon --exec babel-node src/index.js",
     "prebuild": "rm -rf dist",
     "build": "babel src --out-dir dist",
     "postbuild": "cd src/graphql && copy ./schema.graphql ../../dist/graphql",
@@ -15,13 +15,11 @@
   },
   "dependencies": {
     "@babel/plugin-transform-arrow-functions": "^7.8.3",
-    "@babel/polyfill": "^7.8.3",
     "@babel/runtime": "^7.8.4",
     "axios": "^0.18.0",
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.7.0",
     "babel-preset-stage-3": "^6.24.1",
-    "cors": "^2.8.5",
     "graphql-yoga": "^1.14.8"
   },
   "devDependencies": {
