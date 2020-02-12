@@ -1,3 +1,4 @@
+import '@babel/polyfill'
 import { GraphQLServer } from "graphql-yoga";
 import resolvers from "./graphql/resolvers";
 
@@ -25,8 +26,7 @@ const options = {
     origin: "*",
     methods: "GET,HEAD,PUT,PATCH,POST,DELETE"
   },
-  credentials: true,
-  timeout: 300000
+  credentials: true
 };
 
 const server = new GraphQLServer({
