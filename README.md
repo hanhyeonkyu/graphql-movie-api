@@ -1,3 +1,4 @@
-# graphql movie api
+# MOVIE API (graphql)
 
+## OVERVIEW
 Movie API with Graphql
