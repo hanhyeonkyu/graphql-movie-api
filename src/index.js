@@ -27,7 +27,6 @@ const options = {
   },
   credentials: true,
   timeout: 300000,
-  port: 5050,
 };
 
 const server = new GraphQLServer({
