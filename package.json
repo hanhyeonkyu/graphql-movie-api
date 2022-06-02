@@ -1,0 +1,31 @@
+{
+  "name": "graphql-movie-api",
+  "version": "1.0.0",
+  "description": "Movie API with Graphql",
+  "main": "index.js",
+  "repository": "https://github.com/hanhyeonkyu/graphql-movie-api",
+  "author": "AlexHan<busgod1212@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "nodemon --exec babel-node src/index.js",
+    "prebuild": "rm -rf dist",
+    "build": "babel src --out-dir dist",
+    "start": "node --inspect dist/index.js"
+  },
+  "dependencies": {
+    "@babel/plugin-transform-arrow-functions": "^7.16.7",
+    "@babel/runtime": "^7.17.8",
+    "axios": "^0.26.1",
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-stage-3": "^6.24.1",
+    "graphql-playground-html": "^1.6.30",
+    "graphql-yoga": "^1.18.3"
+  },
+  "devDependencies": {
+    "@babel/plugin-transform-async-to-generator": "^7.16.8",
+    "@babel/plugin-transform-runtime": "^7.17.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "nodemon": "^2.0.15"
+  }
+}
